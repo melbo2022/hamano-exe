@@ -1,6 +1,6 @@
 
+# app.py
 from flask import Flask, render_template, send_from_directory, jsonify
-import os
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-# Serve questions as JSON (editable: static/questions.json)
+# Serve questions as JSON (static/questions.json を返す)
 @app.route("/questions")
 def questions():
     return send_from_directory("static", "questions.json", mimetype="application/json")
